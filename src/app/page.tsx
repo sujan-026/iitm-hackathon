@@ -45,7 +45,7 @@ export default function Home() {
     setEsgScore(totalScore.toFixed(2));
   };
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setScores({ ...scores, [name]: value });
   };
