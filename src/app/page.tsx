@@ -14,27 +14,27 @@ export default function Home() {
     transparency: "",
     antiCorruption: "",
   });
-  const [esgScore, setEsgScore] = useState(null);
+  const [esgScore, setEsgScore] = useState<string | null>(null);
 
   const weights = { environmental: 0.4, social: 0.35, governance: 0.25 };
 
   const calculateESG = () => {
     const environmentalScore =
-      (parseFloat(scores.carbonEmission || 0) +
-        parseFloat(scores.energyEfficiency || 0) +
-        parseFloat(scores.waterWaste || 0)) /
+      (parseFloat(scores.carbonEmission || "0") +
+        parseFloat(scores.energyEfficiency || "0") +
+        parseFloat(scores.waterWaste || "0")) /
       3;
 
     const socialScore =
-      (parseFloat(scores.diversity || 0) +
-        parseFloat(scores.labor || 0) +
-        parseFloat(scores.community || 0)) /
+      (parseFloat(scores.diversity || "0") +
+        parseFloat(scores.labor || "0") +
+        parseFloat(scores.community || "0")) /
       3;
 
     const governanceScore =
-      (parseFloat(scores.boardDiversity || 0) +
-        parseFloat(scores.transparency || 0) +
-        parseFloat(scores.antiCorruption || 0)) /
+      (parseFloat(scores.boardDiversity || "0") +
+        parseFloat(scores.transparency || "0") +
+        parseFloat(scores.antiCorruption || "0")) /
       3;
 
     const totalScore =
