@@ -181,7 +181,14 @@ export default function Home() {
 }
 
 // Reusable Input Field Component
-const InputField = ({ label, name, value, onChange }) => (
+interface InputFieldProps {
+  label: string;
+  name: string;
+  value: string;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+}
+
+const InputField = ({ label, name, value, onChange }: InputFieldProps) => (
   <div className="mb-4">
     <label className="block font-medium text-gray-700">{label}</label>
     <input
